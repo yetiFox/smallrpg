@@ -1,0 +1,20 @@
+{
+  "name": "smallrpg",
+  "version": "1.0.0",
+  "description": "A simple elemental rpg",
+  "main": "smallrpg.js",
+  "dependencies": {
+    "pixi.js": "^4.5.5"
+  },
+  "devDependencies": {
+    "@types/pixi.js": "^4.5.3",
+    "awesome-typescript-loader": "^3.2.3",
+    "pixi.js": "^4.5.5",
+    "source-map-loader": "^0.2.1",
+    "typescript": "^2.4.2"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Jake Small"
+}
