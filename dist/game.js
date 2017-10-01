@@ -6,7 +6,7 @@ var Game = (function () {
         var gameView = document.getElementById('gameView');
         gameView.appendChild(app.view);
         // create a new Sprite from an image path
-        var player = PIXI.Sprite.from('https://vignette2.wikia.nocookie.net/finalfantasy/images/a/a1/FFI_PSP_Black_Mage_Map.png/revision/latest?cb=20110503112135');
+        var player = PIXI.Sprite.fromImage('required/assets/characters/BlackMage.png');
         // scale player sprite
         player.height = 25;
         player.width = 25;
@@ -16,13 +16,6 @@ var Game = (function () {
         player.x = app.renderer.width / 2;
         player.y = app.renderer.height / 2;
         app.stage.addChild(player);
-        // Listen for animate update
-        //app.ticker.add(function(delta) {
-        // just for fun, let's rotate mr rabbit a little
-        // delta is 1 if running at 100% performance
-        // creates frame-independent tranformation
-        //    bunny.rotation += 0.1 * delta;
-        //});
         // Add the 'keydown' event listener to our document
         document.addEventListener('keydown', onKeyDown);
         function onKeyDown(key) {
@@ -64,17 +57,16 @@ var Game = (function () {
             }
             // Spacebar Key is 32
             if (key.keyCode === 32) {
-                var player1 = PIXI.Sprite.from('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRXOuE7VEPOChgo2jX91wFHnKjXocZDqU-akuKko85d8yVW4u9s');
-                //https://s-media-cache-ak0.pinimg.com/236x/c6/47/98/c64798b89b43bbcb68c5f871964e4f6b--texture-painting-low-poly.jpg')
+                var wall = PIXI.Sprite.from('required/assets/dungeon/walls/wall_vines0.png');
                 // scale player sprite
-                player1.height = 25;
-                player1.width = 25;
+                wall.height = 25;
+                wall.width = 25;
                 // center the sprite's anchor point
-                player1.anchor.set(0.5);
+                wall.anchor.set(0.5);
                 // move the sprite to the center of the screen
-                player1.x = player.x + player.height;
-                player1.y = player.y;
-                app.stage.addChild(player1);
+                wall.x = player.x + player.height;
+                wall.y = player.y;
+                app.stage.addChild(wall);
             }
         }
     };
